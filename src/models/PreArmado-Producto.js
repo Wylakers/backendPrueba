@@ -27,6 +27,200 @@ Producto.belongsToMany(preArmado, {
   foreignKey: "Producto_ID",
 });
 
+// preArmado_Producto.bulkCreate([
+//   {
+//     Pre_Armado_ID: 1,
+//     Producto_ID: 1,
+//   },
+//   {
+//     Pre_Armado_ID: 1,
+//     Producto_ID: 4,
+//   },
+//   {
+//     Pre_Armado_ID: 1,
+//     Producto_ID: 8,
+//   },
+//   {
+//     Pre_Armado_ID: 1,
+//     Producto_ID: 10,
+//   },
+//   {
+//     Pre_Armado_ID: 1,
+//     Producto_ID: 12,
+//   },
+//   {
+//     Pre_Armado_ID: 1,
+//     Producto_ID: 15,
+//   },
+//   {
+//     Pre_Armado_ID: 1,
+//     Producto_ID: 16,
+//   },
+//   {
+//     Pre_Armado_ID: 1,
+//     Producto_ID: 17,
+//   },
+//   {
+//     Pre_Armado_ID: 1,
+//     Producto_ID: 18,
+//   },
+//   {
+//     Pre_Armado_ID: 1,
+//     Producto_ID: 21,
+//   },
+//   {
+//     Pre_Armado_ID: 1,
+//     Producto_ID: 23,
+//   },
+//   {
+//     Pre_Armado_ID: 1,
+//     Producto_ID: 24,
+//   },
+//   {
+//     Pre_Armado_ID: 2,
+//     Producto_ID: 2,
+//   },
+//   {
+//     Pre_Armado_ID: 2,
+//     Producto_ID: 5,
+//   },
+//   {
+//     Pre_Armado_ID: 2,
+//     Producto_ID: 8,
+//   },
+//   {
+//     Pre_Armado_ID: 2,
+//     Producto_ID: 10,
+//   },
+//   {
+//     Pre_Armado_ID: 2,
+//     Producto_ID: 13,
+//   },
+//   {
+//     Pre_Armado_ID: 2,
+//     Producto_ID: 15,
+//   },
+//   {
+//     Pre_Armado_ID: 2,
+//     Producto_ID: 16,
+//   },
+//   {
+//     Pre_Armado_ID: 2,
+//     Producto_ID: 17,
+//   },
+//   {
+//     Pre_Armado_ID: 2,
+//     Producto_ID: 19,
+//   },
+//   {
+//     Pre_Armado_ID: 2,
+//     Producto_ID: 22,
+//   },
+//   {
+//     Pre_Armado_ID: 2,
+//     Producto_ID: 23,
+//   },
+//   {
+//     Pre_Armado_ID: 2,
+//     Producto_ID: 24,
+//   },
+//   {
+//     Pre_Armado_ID: 3,
+//     Producto_ID: 2,
+//   },
+//   {
+//     Pre_Armado_ID: 3,
+//     Producto_ID: 6,
+//   },
+//   {
+//     Pre_Armado_ID: 3,
+//     Producto_ID: 9,
+//   },
+//   {
+//     Pre_Armado_ID: 3,
+//     Producto_ID: 10,
+//   },
+//   {
+//     Pre_Armado_ID: 3,
+//     Producto_ID: 13,
+//   },
+//   {
+//     Pre_Armado_ID: 3,
+//     Producto_ID: 15,
+//   },
+//   {
+//     Pre_Armado_ID: 3,
+//     Producto_ID: 16,
+//   },
+//   {
+//     Pre_Armado_ID: 3,
+//     Producto_ID: 17,
+//   },
+//   {
+//     Pre_Armado_ID: 3,
+//     Producto_ID: 20,
+//   },
+//   {
+//     Pre_Armado_ID: 3,
+//     Producto_ID: 22,
+//   },
+//   {
+//     Pre_Armado_ID: 3,
+//     Producto_ID: 23,
+//   },
+//   {
+//     Pre_Armado_ID: 3,
+//     Producto_ID: 24,
+//   },
+//   {
+//     Pre_Armado_ID: 4,
+//     Producto_ID: 3,
+//   },
+//   {
+//     Pre_Armado_ID: 4,
+//     Producto_ID: 7,
+//   },
+//   {
+//     Pre_Armado_ID: 4,
+//     Producto_ID: 9,
+//   },
+//   {
+//     Pre_Armado_ID: 4,
+//     Producto_ID: 11,
+//   },
+//   {
+//     Pre_Armado_ID: 4,
+//     Producto_ID: 14,
+//   },
+//   {
+//     Pre_Armado_ID: 4,
+//     Producto_ID: 15,
+//   },
+//   {
+//     Pre_Armado_ID: 4,
+//     Producto_ID: 16,
+//   },
+//   {
+//     Pre_Armado_ID: 4,
+//     Producto_ID: 17,
+//   },
+//   {
+//     Pre_Armado_ID: 4,
+//     Producto_ID: 20,
+//   },
+//   {
+//     Pre_Armado_ID: 4,
+//     Producto_ID: 22,
+//   },
+//   {
+//     Pre_Armado_ID: 4,
+//     Producto_ID: 23,
+//   },
+//   {
+//     Pre_Armado_ID: 4,
+//     Producto_ID: 24,
+//   },
+// ]);
 // const build = await preArmado.findAll({
 //   include: { model: Producto, required: true },
 // });

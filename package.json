@@ -7,8 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js",
-    "start2": "node src/index.js",
-    "start": "sequelize-cli db:seed:all && node src/index.js --init"
+    "start": "node src/index.js",
+    "init": "node src/index.js --init"
   },
   "author": "Rodrigo Perez",
   "license": "ISC",
