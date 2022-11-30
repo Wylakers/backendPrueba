@@ -13,8 +13,7 @@ const port = process.env.DBPORT || 5433;
 const sequelize = new Sequelize(database, username, password, {
   host: hostname,
   dialect: dialect,
-  port,
-  operatorAliases: false,
+  port: port,
 });
 
 // const sequelize = new Sequelize(

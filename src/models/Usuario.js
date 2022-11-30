@@ -1,4 +1,4 @@
-import { DataTypes } from "sequelize";
+import DataTypes from "sequelize";
 import sequelize from "../config/database.js";
 
 import detalleUsuario from "./DetalleUsuario.js";
@@ -41,9 +41,9 @@ Usuarios.hasOne(detalleUsuario, {
   foreignKey: "Usuario_ID",
 });
 
-const ejemplo = await Usuarios.findAll({
-  include: { model: detalleUsuario, required: true },
-});
-console.log(JSON.stringify(ejemplo, null, 2));
+// const ejemplo = await Usuarios.findAll({
+//   include: { model: detalleUsuario, required: true },
+// });
+// console.log(JSON.stringify(ejemplo, null, 2));
 
 export default Usuarios;
