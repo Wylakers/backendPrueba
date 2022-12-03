@@ -1,4 +1,4 @@
-import sequelize from "./config/database.js";
+import sequelize from "./src/config/database.js";
 import app from "./app.js";
 
 async function main() {

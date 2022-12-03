@@ -17,4 +17,3 @@ router.delete("/categoria/:id", remove);
 router.get("/categoria/:id", getOne);
 
 export default router;
-// asd
