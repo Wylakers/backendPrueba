@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 
-import usuarioRoutes from "./src/routes/Usuario.routes.js";
+// import usuarioRoutes from "./src/routes/Usuario.routes.js";
 import detalleRoutes from "./src/routes/Detalle.routes.js";
 import categoriaRoutes from "./src/routes/Categoria.routes.js";
 import productoRoutes from "./src/routes/Producto.routes.js";
@@ -16,7 +16,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-app.use(usuarioRoutes);
+// app.use(usuarioRoutes);
 app.use(detalleRoutes);
 app.use(categoriaRoutes);
 app.use(productoRoutes);
