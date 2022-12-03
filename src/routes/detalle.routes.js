@@ -5,7 +5,7 @@ import {
   create,
   update,
   remove,
-} from "../controller/detalle.controller.js";
+} from "../controller/Detalle.controller.js";
 
 const router = Router();
 

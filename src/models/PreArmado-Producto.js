@@ -1,5 +1,4 @@
 import DataTypes from "sequelize";
-
 import sequelize from "../config/database.js";
 
 import preArmado from "./PreArmado.js";

@@ -35,11 +35,10 @@ export const create = async (req, res) => {
 export const update = async (req, res) => {
   try {
     const { id } = req.params;
-    const { Nombre, Descripcion } = req.body;
 
     const actualizarCategoria = await Categoria.findByPk(id);
-    actualizarCategoria.Nombre = Nombre;
-    actualizarCategoria.Descripcion = Descripcion;
+
+    actualizarCategoria.set(req.body);
 
     await actualizarCategoria.save();
 
@@ -57,7 +56,7 @@ export const remove = async (req, res) => {
       where: { Categoria_ID: id },
     });
 
-    res.json(eliminarCategoria);
+    res.json(204);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }

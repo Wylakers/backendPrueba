@@ -1,10 +1,10 @@
-import Producto from "../models/Producto.js";
+import preArmado_Producto from "../models/PreArmado-Producto.js";
 
 export const getAll = async (req, res) => {
   try {
-    const productos = await Producto.findAll();
+    const preArmados = await preArmado_Producto.findAll();
 
-    res.json(productos);
+    res.json(preArmados);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -14,9 +14,9 @@ export const getOne = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const producto = await Producto.findByPk(id);
+    const preArmado1 = await preArmado.findByPk(id);
 
-    res.json(producto);
+    res.json(preArmado1);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -24,17 +24,14 @@ export const getOne = async (req, res) => {
 
 export const create = async (req, res) => {
   try {
-    const { Nombre, Precio, Descripcion, Imagen, Categoria_ID } = req.body;
+    const { Pre_Armado_ID, Producto_ID } = req.body;
 
-    const crearProducto = await Producto.create({
-      Nombre,
-      Precio,
-      Descripcion,
-      Imagen,
-      Categoria_ID,
+    const crearPreArmado = await preArmado.create({
+      Pre_Armado_ID,
+      Producto_ID,
     });
 
-    res.json(crearProducto);
+    res.json(crearPreArmado);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -44,13 +41,13 @@ export const update = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const actualizaProducto = await Producto.findByPk(id);
+    const actualizarPreArmado = await preArmado.findByPk(id);
 
-    actualizaProducto.set(req.body);
+    actualizarPreArmado.set(req.body);
 
-    await actualizaProducto.save();
+    await actualizarPreArmado.save();
 
-    res.json(actualizaProducto);
+    res.json(actualizarPreArmado);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -60,8 +57,8 @@ export const remove = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const eliminarProducto = await Producto.destroy({
-      where: { Producto_ID: id },
+    const eliminarPreArmado = await preArmado.destroy({
+      where: { Pre_Armado_ID: id },
     });
 
     res.json(204);

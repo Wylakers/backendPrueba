@@ -1,10 +1,10 @@
 import Usuario from "../models/Usuario.js";
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+import DetalleUsuario from "../models/DetalleUsuario.js";
 
 export const getAll = async (req, res) => {
   try {
-    const usuarios = await Usuario.findAll();
+    const usuarios = await Usuario.findAll({ include: DetalleUsuario });
     res.json(usuarios);
   } catch (error) {
     return res.status(500).json({ message: error.message });
@@ -15,7 +15,7 @@ export const getOne = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const usuario = await Usuario.findByPk(id);
+    const usuario = await Usuario.findByPk(id, { include: DetalleUsuario });
     res.json(usuario);
   } catch (error) {
     return res.status(500).json({ message: error.message });
@@ -44,13 +44,9 @@ export const update = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const { Nombre, Apellido, Correo, Password } = req.body;
-
     const actualizarUsuario = await Usuario.findByPk(id);
-    actualizarUsuario.Nombre = Nombre;
-    actualizarUsuario.Apellido = Apellido;
-    actualizarUsuario.Correo = Correo;
-    actualizarUsuario.Password = Password;
+
+    actualizarUsuario.set(req.body);
 
     await actualizarUsuario.save();
 
@@ -79,18 +75,17 @@ export const remove = async (req, res) => {
 export const login = async (req, res) => {
   const { Correo, Password } = req.body;
 
-  const user = await Usuario.findOne({ where: { Correo } });
+  const user = await Usuario.findOne({ where: { Correo: Correo } });
 
-  if (!user) res.json({ error: "User not found" });
-
-  // bcrypt.compare(Password, user.Password).then((match) => {
-  //   if (!match) res.json({ error: "Wrong email and password" });
-
-  const accessToken = jwt.sign(
-    { Correo, Password },
-    "secretthatprotectsthetoken"
-  );
-
-  res.json(accessToken);
-  // });
+  if (!user) {
+    res.json({ error: "User not found" });
+  } else {
+    bcrypt.compare(Password, user.Password).then((match) => {
+      if (!match) {
+        res.json({ error: "Wrong email and password" });
+      } else {
+        res.json(user.Usuario_ID);
+      }
+    });
+  }
 };

@@ -6,7 +6,7 @@ import {
   create,
   update,
   remove,
-} from "../controller/categoria.controller.js";
+} from "../controller/Categoria.controller.js";
 
 const router = Router();
 

@@ -6,7 +6,7 @@ import {
   create,
   update,
   remove,
-} from "../controller/producto.controller.js";
+} from "../controller/Producto.controller.js";
 
 const router = Router();
 

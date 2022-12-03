@@ -1,35 +1,34 @@
-import DataTypes from "sequelize";
-
+import { DataTypes } from "sequelize";
 import sequelize from "../config/database.js";
 
-const detalleUsuario = sequelize.define(
-  "detalle_usuario",
+const Reporte = sequelize.define(
+  "reporte",
   {
-    Detalle_ID: {
+    Reporte_ID: {
       type: DataTypes.INTEGER,
       primaryKey: true,
+      allowNull: false,
       autoIncrement: true,
-      allowNull: false,
     },
-    Direccion: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-    },
-    Departamento: {
-      type: DataTypes.STRING,
-      defaultValue: null,
-    },
-    Ciudad: {
+    Correo: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    Codigo_postal: {
+    Nombre: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     Telefono: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    Asunto: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    Descripcion: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
@@ -37,4 +36,4 @@ const detalleUsuario = sequelize.define(
   }
 );
 
-export default detalleUsuario;
+export default Reporte;

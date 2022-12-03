@@ -2,6 +2,7 @@ import DataTypes from "sequelize";
 import sequelize from "../config/database.js";
 
 import detalleUsuario from "./DetalleUsuario.js";
+import Reporte from "./Reporte.js";
 
 const Usuarios = sequelize.define(
   "usuarios",
@@ -33,11 +34,21 @@ const Usuarios = sequelize.define(
   { timestamps: false }
 );
 
+//Conexión a tabla Detalle_Usuario
 detalleUsuario.belongsTo(Usuarios, {
   foreignKey: "Usuario_ID",
 });
 
-Usuarios.hasOne(detalleUsuario, {
+Usuarios.hasMany(detalleUsuario, {
+  foreignKey: "Usuario_ID",
+});
+
+//Conexión a tabla Reporte
+Reporte.belongsTo(Usuarios, {
+  foreignKey: "Usuario_ID",
+});
+
+Usuarios.hasMany(Reporte, {
   foreignKey: "Usuario_ID",
 });
 

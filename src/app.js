@@ -2,12 +2,13 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 
-import usuarioRoutes from "./routes/usuario.routes.js";
-import detalleRoutes from "./routes/detalle.routes.js";
-import categoriaRoutes from "./routes/categoria.routes.js";
-import productoRoutes from "./routes/producto.routes.js";
-import preArmadoRoutes from "./routes/preArmado.routes.js";
-import preArmado_Producto from "./models/PreArmado-Producto.js";
+import usuarioRoutes from "./routes/Usuario.routes.js";
+import detalleRoutes from "./routes/Detalle.routes.js";
+import categoriaRoutes from "./routes/Categoria.routes.js";
+import productoRoutes from "./routes/Producto.routes.js";
+import preArmadoRoutes from "./routes/PreArmado.routes.js";
+import preArmadoProductoRoutes from "./routes/PreArmado-Producto.routes.js";
+import reporteRoutes from "./routes/Reporte.routes.js";
 
 var app = express();
 
@@ -20,5 +21,7 @@ app.use(detalleRoutes);
 app.use(categoriaRoutes);
 app.use(productoRoutes);
 app.use(preArmadoRoutes);
+app.use(preArmadoProductoRoutes);
+app.use(reporteRoutes);
 
 export default app;

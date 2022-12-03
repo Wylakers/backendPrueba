@@ -1,10 +1,11 @@
-import detalleUsuario from "../models/DetalleUsuario.js";
+import Reporte from "../models/Reporte.js";
+import Usuario from "../models/Usuario.js";
 
 export const getAll = async (req, res) => {
   try {
-    const detalles = await detalleUsuario.findAll();
+    const reportes = await Reporte.findAll({ include: Usuario });
 
-    res.json(detalles);
+    res.json(reportes);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -14,9 +15,9 @@ export const getOne = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const usuario = await detalleUsuario.findByPk(id);
+    const reporte = await Reporte.findByPk(id, { include: Usuario });
 
-    res.json(usuario);
+    res.json(reporte);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -24,25 +25,19 @@ export const getOne = async (req, res) => {
 
 export const create = async (req, res) => {
   try {
-    const {
-      Direccion,
-      Departamento,
-      Ciudad,
-      Codigo_postal,
-      Telefono,
-      Usuario_ID,
-    } = req.body;
+    const { Correo, Nombre, Telefono, Asunto, Descripcion, Usuario_ID } =
+      req.body;
 
-    const crearDetalle = await detalleUsuario.create({
-      Direccion,
-      Departamento,
-      Ciudad,
-      Codigo_postal,
+    const nuevoReporte = Reporte.create({
+      Correo,
+      Nombre,
       Telefono,
+      Asunto,
+      Descripcion,
       Usuario_ID,
     });
 
-    res.json(crearDetalle);
+    res.json("Creado");
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -52,17 +47,17 @@ export const update = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const actualizarDetalle = await detalleUsuario.findOne({
+    const actualizarReporte = await Reporte.findOne({
       where: {
         Usuario_ID: id,
       },
     });
 
-    actualizarDetalle.set(req.body);
+    actualizarReporte.set(req.body);
 
-    await actualizarDetalle.save();
+    await actualizarReporte.save();
 
-    res.json(actualizarDetalle);
+    res.json(actualizarReporte);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -72,9 +67,9 @@ export const remove = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const eliminarDetalle = await detalleUsuario.destroy({
+    const eliminarReporte = await Reporte.destroy({
       where: {
-        Detalle_ID: id,
+        Reporte_ID: id,
       },
     });
     res.json(204);

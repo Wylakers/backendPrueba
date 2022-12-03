@@ -6,7 +6,7 @@ import {
   create,
   update,
   remove,
-} from "../controller/preArmado.controller.js";
+} from "../controller/PreArmado.controller.js";
 
 const router = Router();
 

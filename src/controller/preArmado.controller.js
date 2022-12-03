@@ -38,11 +38,12 @@ export const create = async (req, res) => {
 export const update = async (req, res) => {
   try {
     const { id } = req.params;
-    const { Nombre, Descripcion } = req.body;
 
     const actualizarPreArmado = await preArmado.findByPk(id);
-    actualizarPreArmado.Nombre = Nombre;
-    actualizarPreArmado.Descripcion = Descripcion;
+
+    actualizarPreArmado.set(req.body);
+
+    await actualizarPreArmado.save();
 
     res.json(actualizarPreArmado);
   } catch (error) {
@@ -58,7 +59,7 @@ export const remove = async (req, res) => {
       where: { Pre_Armado_ID: id },
     });
 
-    res.json(eliminarPreArmado);
+    res.json(204);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
