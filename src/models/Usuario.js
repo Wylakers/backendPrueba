@@ -3,6 +3,8 @@ import sequelize from "../config/database.js";
 
 import detalleUsuario from "./DetalleUsuario.js";
 import Reporte from "./Reporte.js";
+import Orden from "./Orden.js";
+import Review from "./Review.js";
 
 const Usuarios = sequelize.define(
   "usuarios",
@@ -49,6 +51,24 @@ Reporte.belongsTo(Usuarios, {
 });
 
 Usuarios.hasMany(Reporte, {
+  foreignKey: "Usuario_ID",
+});
+
+//Conexión a tabla Orden
+Orden.belongsTo(Usuarios, {
+  foreignKey: "Usuario_ID",
+});
+
+Usuarios.hasMany(Orden, {
+  foreignKey: "Usuario_ID",
+});
+
+//Conexión a tabla Reseña
+Review.belongsTo(Usuarios, {
+  foreignKey: "Usuario_ID",
+});
+
+Usuarios.hasMany(Review, {
   foreignKey: "Usuario_ID",
 });
 

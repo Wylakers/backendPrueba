@@ -1,0 +1,170 @@
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"Procesador",
+   "Descripcion":"Unidad de procesamiento encargada de interpretar las instrucciones de un hardware"
+}
+
+############
+
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"Tarjeta Grafica",
+   "Descripcion":"Procesamiento de datos relacionados con el vídeo y las imágenes"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"RAM",
+   "Descripcion":"Almacena información que un programa necesita mientras se ejecuta"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"SSD",
+   "Descripcion":"El disco de estado sólido es un sistema de almacenamiento de datos"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"CPU Cooler",
+   "Descripcion":"Facilita el flujo de aire y se usa normalmente con un disipador térmico"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"Case Cooler",
+   "Descripcion":"Facilita el flujo de aire"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"Case",
+   "Descripcion":"Aloja diversos componentes de un computador"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"Fuente de Poder",
+   "Descripcion":"Brindar el suministro de energía a cada componente de un computador"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"Motherboard",
+   "Descripcion":"Une los componentes de la computadora en un mismo punto y les permite comunicarse entre sí"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"Adaptador WiFi",
+   "Descripcion":"Conecta el equipo a una red inalámbrica"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"Sistema Operativo",
+   "Descripcion":"Controla los procesos básicos de una computadora y permiten el funcionamiento de otros programas"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"Ensamblaje",
+   "Descripcion":"Unir todos los componentes necesarios de un computador"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"Mouse pad",
+   "Descripcion":"Alfombrilla para apoyar el mouse"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"Headset",
+   "Descripcion":"Par de auriculares con un micrófono conectado"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/categoria
+Content-Type: application/json
+
+{
+   "Nombre":"Keyboard & Mouse Bundle",
+   "Descripcion":"Dispositivos de entrada que ayudan a interactuar con el computador"
+}
+
+
+
+
+
+
+
+
+############
+POST http://localhost:3001/courses
+Content-Type: application/json
+
+{
+    "name": "Estructura de Datos",
+    "level": 5,
+    "idProfessor": 1
+}
+
+#########
+GET http://localhost:3001/courses
+#########
+GET http://localhost:3001/courses/all
+########
+GET http://localhost:3001/courses/2
+###########
+PUT http://localhost:3001/courses
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Web Programming",
+    "level": 6,
+    "idProfessor": 1
+}
+#######
+DELETE http://localhost:3001/courses/1

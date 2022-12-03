@@ -1,0 +1,35 @@
+POST https://nuevobackend-production.up.railway.app/pre-armado
+Content-Type: application/json
+
+{
+   "Nombre":"Monster PC",
+   "Descripcion":"Ofrece la mejor experiencia para jugadores y creadores, con los últimos y mejores componentes del mercado"
+}
+
+
+############
+POST https://nuevobackend-production.up.railway.app/pre-armado
+Content-Type: application/json
+
+{
+   "Nombre":"Cruser Build",
+   "Descripcion":"PC con los mejores componentes que aseguran gran rendimiento en juegos de alta resolución"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/pre-armado
+Content-Type: application/json
+
+{
+   "Nombre":"NASA PC",
+   "Descripcion":"Un computador que ofrece gran rendimiento por un precio no tan elevado"
+}
+
+############
+POST https://nuevobackend-production.up.railway.app/pre-armado
+Content-Type: application/json
+
+{
+   "Nombre":"Budget Build",
+   "Descripcion":"Una PC de entrada para personas nuevas al gaming, con componentes balanceados que aseguran un buen rendimiento"
+}

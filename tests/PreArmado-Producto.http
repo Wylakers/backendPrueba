@@ -1,0 +1,6 @@
+POST https://nuevobackend-production.up.railway.app/prearmado-producto
+Content-Type: application/json
+
+
+
+

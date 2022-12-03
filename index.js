@@ -13,7 +13,7 @@ async function main() {
     else await sequelize.sync({ force: false });
 
     /* Puerto del backend */
-    var PORT = 8000;
+    var PORT = process.env.PORT || 8000;
     app.listen(PORT);
     console.log("App iniciada en el puerto " + PORT);
   } catch (error) {
